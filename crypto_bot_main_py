@@ -1,0 +1,56 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
+import math
+import time
+
+
+class Crypto_main:
+    def mainbot(self):
+        crypto_pro = webdriver.FirefoxProfile()
+        browser = webdriver.Firefox(crypto_pro)
+        browser.get('https://www.pionex.com/en-US/market')
+        time.sleep(3)
+        print(len(coin_list))
+        # browser.find_elements_by_css_selector(
+        #    "div[class='symbolLayout___1hi0N']")
+        # coin_shrtcut = browser.find_elements_by_css_selector(
+        #    "div[style='margin-left: 8px;']")
+        # allcoins = browser.find_elements_by_xpath(
+        #    '//div[contains(@class, "tableRow___w5YrW")]')
+        # print(len(allcoins))
+        #coinshr_txt = [link.text for link in coin_shrtcut]
+        for i in range(len(coin_list)):
+            browser.get(
+                'https://www.pionex.com/en-US/trade/'+coin_list[i] + '/pionex.v2')
+            time.sleep(5)
+            browser.find_element_by_css_selector(
+                "button[class='ant-btn bot_item_btn___1dyp0 mark___Czrxn ']").click()
+            time.sleep(5)
+            an_Rate = browser.find_element_by_css_selector(
+                "div[class='tab_extra_ai_per___2TY8y']").text
+            price_ran = browser.find_element_by_xpath(
+                '//div/div[1]/span[2]').text
+            try:
+                min_inv = browser.find_element_by_css_selector(
+                    "div[class='the_investment_text___acWT7']").text
+                inv_aam = min_inv[min_inv.find("bot is")+7:]
+                print(coin_list[i] + "  " + an_Rate +
+                      "  " + inv_aam + "  "+price_ran)
+            except:
+                min_inv = browser.find_element_by_xpath(
+                    '//div/div[3]/span[2]').text
+                print(coin_list[i] + "  " + an_Rate +
+                      "  " + min_inv + "  "+price_ran)
+
+
+        # title_new = str(title.text)
+        # start_ind = int(title_new.index(":"))+2
+        # end_ind = int(title_new.index('properties'))
+        # print(title_new)
+start_time = time.time()
+
+ed = Crypto_main()
+
+ed.mainbot()
+print("---Took: " + str(round((time.time() - start_time)/60)) + " minute(s).")
