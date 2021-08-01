@@ -14,5 +14,8 @@ Properties
 - Compatible with Firefox and Chrome
 Much more!
 
-![image](https://user-images.githubusercontent.com/34207598/127747296-f80949d8-3ebd-4f9e-84fa-cadeca1dc68a.png)
 
+![crypto3](https://user-images.githubusercontent.com/34207598/127770008-86e09f02-70ab-4bb9-a0a8-3d3b4c12906c.png)
+![crypbot2](https://user-images.githubusercontent.com/34207598/127770009-9c0b6d9a-18f7-4568-ad33-ed67d98cddfd.png)
+![image](https://user-images.githubusercontent.com/34207598/127747296-f80949d8-3ebd-4f9e-84fa-cadeca1dc68a.png)
+![Cryptonfin](https://user-images.githubusercontent.com/34207598/127770022-38f75009-cdc3-44ec-9a9f-cc0c4b3cef5a.gif)
